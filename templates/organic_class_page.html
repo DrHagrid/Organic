@@ -34,11 +34,18 @@
                                          <li>
                                              <p class="font-weight-bold">{{ reaction.name }}</p>
                                              <div class="well">
-                                                 {{ reaction.materials }}
-                                                 <span class="glyphicon glyphicon-arrow-right"></span>
-                                                 {{ reaction.products }}
-                                                 ({{ reaction.conditions }})
+                                                 {% if reaction.picture %}
+                                                     <img src="{{ reaction.picture.url }}" class="img-responsive">
+                                                 {% else %}
+                                                     {{ reaction.materials }}
+                                                     <span class="glyphicon glyphicon-arrow-right"></span>
+                                                     {{ reaction.products }}
+                                                     ({{ reaction.conditions }})
+                                                 {% endif %}
                                              </div>
+                                             {% if reaction.description %}
+                                                <p class="un-bold">{{ reaction.description }}</p>
+                                             {% endif %}
                                          </li>
                                      {% endfor %}
                                  </ul>
@@ -55,13 +62,20 @@
                                  <ul>
                                      {% for receivingreaction in organic_class.receivingreaction_set.all %}
                                          <li>
-                                             <p class="reaction-name">{{ receivingreaction.name }}</p>
+                                             <p class="font-weight-bold">{{ receivingreaction.name }}</p>
                                              <div class="well">
-                                                 {{ receivingreaction.materials }}
-                                                 <span class="glyphicon glyphicon-arrow-right"></span>
-                                                 {{ receivingreaction.products }}
-                                                 ({{ receivingreaction.conditions }})
+                                                 {% if reaction.picture %}
+                                                     <img src="{{ reaction.picture.url }}" class="img-responsive">
+                                                 {% else %}
+                                                     {{ receivingreaction.materials }}
+                                                     <span class="glyphicon glyphicon-arrow-right"></span>
+                                                     {{ receivingreaction.products }}
+                                                     ({{ receivingreaction.conditions }})
+                                                 {% endif %}
                                              </div>
+                                             {% if receivingreaction.description %}
+                                                 <p class="un-bold">{{ receivingreaction.description }}</p>
+                                             {% endif %}
                                          </li>
                                      {% endfor %}
                                  </ul>
