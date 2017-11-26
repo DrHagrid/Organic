@@ -1,0 +1,37 @@
+body {
+    background-color: #e4e4e4;
+    margin-top: 0;
+}
+
+.navmenu {
+	width: 15%;
+    border: none;
+}
+
+.main-container {
+    padding-left: 15%;
+}
+
+.reaction-name {
+    font-weight: bold;
+}
+
+.btn {
+    width: 100%;
+}
+
+li {
+    list-style: decimal;
+}
+
+li p {
+    font-weight: bold;
+}
+
+.navmenu-default .navmenu-brand,
+.navmenu-default .navmenu-brand:hover,
+.navmenu-default .navmenu-brand:focus{
+	margin: 0;
+    color: white;
+	background-color: #1b1b1b;
+}

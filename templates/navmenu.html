@@ -1,0 +1,9 @@
+<nav class="navmenu navmenu-default navmenu-fixed-left navmenu-inverse" role="navigation">
+    <a class="navmenu-brand" href="#">Органическая химия</a>
+
+    <ul class="nav navmenu-nav">
+        {% for organic_class in organic_classes %}
+            <li class="navmenu-element" id="{{ organic_class.id }}"><a href="#">{{ organic_class.name }}</a></li>
+        {% endfor %}
+    </ul>
+</nav>
