@@ -3,7 +3,7 @@
 
     <ul class="nav navmenu-nav">
         {% for organic_class in organic_classes %}
-            <li class="navmenu-element" id="{{ organic_class.id }}"><a href="#">{{ organic_class.name }}</a></li>
+            <li class="navmenu-element"><a href="{% url 'class' organic_class.text_id %}">{{ organic_class.name }}</a></li>
         {% endfor %}
     </ul>
 </nav>
