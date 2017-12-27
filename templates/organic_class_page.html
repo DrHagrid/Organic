@@ -31,7 +31,7 @@
                                      <p class="font-weight-bold">{{ reaction.name }}</p>
                                      <div class="well">
                                          {% if reaction.picture %}
-                                             <img src="{{ reaction.picture.url }}" class="img-responsive">
+                                             <img src="../{{ reaction.picture.url }}" class="img-responsive">
                                          {% else %}
                                              {{ reaction.materials_trans }}
                                              <span class="glyphicon glyphicon-arrow-right"></span>

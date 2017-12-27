@@ -4,14 +4,19 @@ from classes.models import OrganicClass
 
 def transform(inp):
     res = ''
+    num = ''
     for i in range(0, len(inp)):
-        if inp[i].isdigit():
-            if (i == 0) or (inp[i - 1].isspace()):
-                res += inp[i]
-            else:
-                res += '<sub>' + inp[i] + '</sub>'
+        if (inp[i].isdigit()) and (inp[i-1].isalpha() or num):
+            num += inp[i]
+            if i == len(inp)-1:
+                res += '<sub>' + num + '</sub>'
+        elif num:
+            res += '<sub>' + num + '</sub>'
+            res += inp[i]
+            num = ''
         else:
             res += inp[i]
+            num = ''
     return res
 
 
