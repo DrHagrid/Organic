@@ -37,11 +37,11 @@
                                              ({{ reaction.conditions }})
                                          {% endif %}
                                          {% if reaction.picture %}
+                                             <br>
                                              <img src="../{{ reaction.picture.url }}" class="img-responsive">
                                          {% endif %}
                                      </div>
                                      {% if reaction.description %}
-                                         <br>
                                         <p class="un-bold">{{ reaction.description }}</p>
                                      {% endif %}
                                  </li>
