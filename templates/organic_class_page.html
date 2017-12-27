@@ -30,13 +30,14 @@
                                  <li>
                                      <p class="font-weight-bold">{{ reaction.name }}</p>
                                      <div class="well">
+                                         {{ reaction.materials_trans }}
+                                         <span class="glyphicon glyphicon-arrow-right"></span>
+                                         {{ reaction.products_trans }}
+                                         {% if reaction.conditions %}
+                                             ({{ reaction.conditions }})
+                                         {% endif %}
                                          {% if reaction.picture %}
                                              <img src="../{{ reaction.picture.url }}" class="img-responsive">
-                                         {% else %}
-                                             {{ reaction.materials_trans }}
-                                             <span class="glyphicon glyphicon-arrow-right"></span>
-                                             {{ reaction.products_trans }}
-                                             ({{ reaction.conditions }})
                                          {% endif %}
                                      </div>
                                      {% if reaction.description %}
@@ -62,13 +63,14 @@
                                  <li>
                                      <p class="font-weight-bold">{{ receivingreaction.name }}</p>
                                      <div class="well">
+                                         {{ receivingreaction.materials_trans }}
+                                         <span class="glyphicon glyphicon-arrow-right"></span>
+                                         {{ receivingreaction.products_trans }}
+                                         {% if receivingreaction.conditions %}
+                                            ({{ receivingreaction.conditions }})
+                                         {% endif %}
                                          {% if reaction.picture %}
                                              <img src="{{ reaction.picture.url }}" class="img-responsive">
-                                         {% else %}
-                                             {{ receivingreaction.materials_trans }}
-                                             <span class="glyphicon glyphicon-arrow-right"></span>
-                                             {{ receivingreaction.products_trans }}
-                                             ({{ receivingreaction.conditions }})
                                          {% endif %}
                                      </div>
                                      {% if receivingreaction.description %}
